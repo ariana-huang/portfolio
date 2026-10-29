@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Ari Huang: marketer, ex-AWS, Tech MBA at Cornell. Product marketing, growth and partnerships in ad-tech, media, streaming and sports tech.">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Ari Huang Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: light, multi-page (hash views). Work gallery first, case studies open from cards, About second. Motion only on hover. */
+:root{
+  --bg:#FFFFFF; --ink:#1B1B1F; --muted:#5F6068; --line:#E7E7EC; --accent:#3A5BFF;
+  --sky:#DCE6FF; --pink:#FFE1EC; --sun:#FFF0BF; --mint:#D6F4E4; --lilac:#ECE3FF; --peach:#FFE5D3;
+  --f-display:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-accent:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --f-body:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1080px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;letter-spacing:-.035em;line-height:1.05;margin:0;text-wrap:balance}
+.label{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.hi{font-family:var(--f-accent);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--accent)}
+
+/* Nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}
+.logo{font-family:var(--f-display);font-weight:700;letter-spacing:-.02em;font-size:20px;text-decoration:none}
+.logo span{color:var(--accent)}
+.links{display:flex;align-items:center;gap:6px}
+.navlink{text-decoration:none;font-weight:500;font-size:15px;padding:7px 12px;border-radius:999px}
+.navlink:hover{background:var(--sky)}
+.navlink[aria-current="page"]{background:var(--ink);color:var(--bg)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--ink);border-radius:999px;padding:9px 18px;font:500 15px var(--f-body);text-decoration:none;background:var(--bg);color:var(--ink);cursor:pointer;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-2px);background:var(--sun)}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.solid:hover{background:var(--accent);border-color:var(--accent)}
+.links{flex-wrap:wrap;justify-content:flex-end}
+@media (max-width:760px){.links .btn{display:none}.navlink{padding:6px 9px;font-size:14px}}
+@media (max-width:480px){nav .wrap{flex-direction:column;align-items:flex-start;gap:8px}.links{justify-content:flex-start}}
+
+main{padding-block:48px 24px;display:grid;gap:64px}
+.view{display:grid;gap:56px}
+
+/* Work hero */
+.hero{display:grid;gap:20px;max-width:760px}
+.status{display:inline-flex;align-items:center;gap:8px;background:var(--mint);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:500;width:fit-content}
+.status i{width:8px;height:8px;border-radius:50%;background:#1E9E5A}
+.hero h1{font-size:clamp(40px,6.6vw,72px)}
+.lede{font-size:clamp(17px,2vw,20px);color:var(--muted);margin:0;max-width:58ch}
+.lede b{color:var(--ink);font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.note{font-size:14px;color:var(--muted);margin:0}
+
+/* Highlights */
+.hl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:820px){.hl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.hl div{border-radius:18px;padding:18px;display:grid;gap:4px;align-content:start;min-width:0}
+.hl .n{font-family:var(--f-display);font-weight:700;font-size:clamp(30px,4vw,42px);line-height:1}
+.hl .l{font-size:14px;color:var(--muted)}
+
+/* Gallery */
+.sh{display:grid;gap:8px}
+.sh h2{font-size:clamp(30px,4.2vw,44px)}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:900px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.gallery{grid-template-columns:1fr}}
+.card{display:grid;gap:12px;text-decoration:none;border-radius:22px;padding:12px 12px 18px;transition:transform .2s ease,box-shadow .2s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px -18px rgba(27,27,31,.35)}
+.cover{border-radius:14px;aspect-ratio:16/10;max-width:100%;overflow:hidden;display:grid;place-items:center}
+.cover svg{width:100%;height:100%;display:block;transition:transform .3s ease}
+.card:hover .cover svg{transform:scale(1.05) rotate(-1deg)}
+.card .meta{padding-inline:6px;display:grid;gap:6px}
+.card h3{font-size:22px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card .stat{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:14px;font-weight:600;padding-top:6px}
+.card .stat .go{color:var(--accent)}
+
+/* Case study */
+.back{text-decoration:none;font-weight:500;font-size:15px;width:fit-content;padding:6px 12px;border-radius:999px;border:1px solid var(--line)}
+.back:hover{background:var(--sky)}
+.case-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:center}
+@media (max-width:820px){.case-head{grid-template-columns:1fr}}
+.case-head h1{font-size:clamp(34px,5.4vw,58px)}
+.case-head .cover{border-radius:22px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+@media (max-width:620px){.facts{grid-template-columns:1fr}}
+.facts div{background:var(--bg);padding:16px 18px;display:grid;gap:2px}
+.facts b{font-weight:600}
+.prose{display:grid;gap:40px;max-width:720px}
+.prose section{display:grid;gap:12px}
+.prose h2{font-size:28px}
+.prose p{margin:0}
+.prose ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.results div{border-radius:16px;padding:18px;display:grid;gap:4px}
+.results .n{font-family:var(--f-display);font-weight:700;font-size:38px;line-height:1}
+.results .l{font-size:14px;color:var(--muted)}
+.pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px}
+.pager a{text-decoration:none;display:grid;gap:2px;padding:10px 14px;border-radius:14px;transition:background .15s ease}
+.pager a:hover{background:var(--sky)}
+.pager a:last-child{text-align:right;margin-left:auto}
+.pager b{font-family:var(--f-display);font-size:19px}
+
+/* About */
+.about-head{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:center}
+@media (max-width:820px){.about-head{grid-template-columns:1fr}}
+.about-head h1{font-size:clamp(40px,6vw,64px)}
+.sticker{aspect-ratio:1;max-width:340px;width:100%;justify-self:center;transition:transform .25s ease}
+.sticker:hover{transform:rotate(-4deg) scale(1.02)}
+.timeline{list-style:none;margin:0;padding:0;display:grid;gap:0;border-left:2px solid var(--line);margin-left:6px}
+.timeline li{position:relative;padding:0 0 24px 26px;display:grid;gap:2px}
+.timeline li::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.timeline .yr{font-size:13px;font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums}
+.timeline b{font-weight:600}
+.timeline span.d{color:var(--muted);font-size:15px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+.panel{border-radius:22px;padding:24px;display:grid;gap:12px;align-content:start}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:14px}
+.kit{display:grid;gap:14px}
+.kit .label{display:block;margin-bottom:6px}
+
+/* Footer contact */
+footer{border-top:1px solid var(--line);padding-block:48px 40px;display:grid;gap:18px}
+footer h2{font-size:clamp(30px,4.6vw,48px)}
+.email{font-weight:500;user-select:all;padding:9px 16px;border-radius:999px;background:var(--sky);overflow-wrap:anywhere}
+.fine{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:14px;color:var(--muted);padding-top:12px}
+
+.t-sky{background:var(--sky)} .t-pink{background:var(--pink)} .t-sun{background:var(--sun)} .t-mint{background:var(--mint)} .t-lilac{background:var(--lilac)} .t-peach{background:var(--peach)}
+.nowgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.nowgrid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:900px){.nowgrid,.nowgrid.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.nowgrid,.nowgrid.four{grid-template-columns:1fr}}
+.panel{transition:transform .2s ease}
+.nowgrid .panel:hover{transform:translateY(-3px) rotate(-.5deg)}
+.two .panel:hover{transform:translateY(-3px)}
+.evlist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.evlist li{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--bg);border-radius:12px;padding:10px 14px}
+.evlist span{color:var(--muted);font-size:15px}
+/* Intro */
+.intro{display:grid;justify-items:center;text-align:center;gap:22px;padding-block:24px 8px}
+.intro h1{font-size:clamp(44px,8vw,96px);line-height:.98;max-width:12ch}
+.intro .hi{font-size:1.06em}
+.intro .lede{max-width:52ch}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.eyebrow i{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.eyebrow.plain{margin-top:8px}
+.chips.center,.row.center{justify-content:center}
+.intro .chip{padding:8px 16px;font-size:15px}
+.tv{display:grid;grid-template-columns:minmax(0,1fr) 84px;gap:16px;width:min(100%,560px);background:var(--sky);border:3px solid var(--ink);border-radius:28px;padding:18px;margin-top:12px;box-shadow:0 22px 40px -28px rgba(27,27,31,.45)}
+.screen{position:relative;aspect-ratio:4/3;max-width:100%;border:3px solid var(--ink);border-radius:18px;background:var(--ink);color:#F4F5F7;overflow:hidden;cursor:pointer;display:grid;place-items:center;padding:24px;font:inherit}
+.screen::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 4px)}
+.tvch{position:absolute;top:14px;left:16px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#9EA6FF}
+.tvbody{display:grid;justify-items:center;gap:14px}
+.play{width:64px;height:64px;border-radius:50%;background:#fff;position:relative;transition:transform .2s ease}
+.play::after{content:"";position:absolute;left:25px;top:20px;border-left:20px solid var(--ink);border-top:12px solid transparent;border-bottom:12px solid transparent}
+.screen:hover .play{transform:scale(1.08)}
+.tvtitle{font-size:15px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.tvtext{font-family:var(--f-accent);font-size:clamp(22px,3.6vw,30px);line-height:1.2;text-wrap:balance}
+.screen.zap .tvbody{animation:zap .25s ease-out}
+@keyframes zap{0%{opacity:0;transform:scaleY(.04)}60%{opacity:1;transform:scaleY(1.02)}100%{transform:none}}
+.side{display:grid;justify-items:center;align-content:start;gap:14px;padding-top:4px}
+.brand{font-size:12px;font-weight:600;letter-spacing:.12em}
+.grille{width:56px;height:84px;border-radius:8px;background:repeating-linear-gradient(0deg,var(--ink) 0 2px,transparent 2px 7px);opacity:.55}
+.knob{width:46px;height:46px;border-radius:50%;border:3px solid var(--ink);background:#fff;cursor:pointer;position:relative;transition:transform .25s ease}
+.knob::after{content:"";position:absolute;left:50%;top:5px;width:3px;height:12px;margin-left:-1.5px;border-radius:2px;background:var(--ink)}
+button.knob:hover{transform:rotate(40deg)}
+.knob.sm{width:28px;height:28px;cursor:default}
+.knob.sm::after{display:none}
+.caption{font-family:var(--f-accent);font-style:italic;font-size:22px;color:var(--muted)}
+@media (max-width:480px){.tv{grid-template-columns:1fr;}.side{grid-auto-flow:column;align-items:center;justify-content:space-between}.grille{height:28px;width:90px}}
+/* Journey map */
+.journey{display:grid;gap:22px}
+.jgrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:stretch}
+@media (max-width:860px){.jgrid{grid-template-columns:1fr}}
+.cinema{border-radius:22px;overflow:hidden;background:var(--ink);display:grid;min-width:0;box-shadow:0 22px 40px -28px rgba(27,27,31,.5)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;color:#F4F5F7;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;min-height:44px}
+.bar .t{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.bar .t i{font-family:var(--f-accent);font-weight:400;font-size:18px;letter-spacing:0;text-transform:none;color:#A9B7FF}
+.bar #reel{color:#9EA3AD;font-variant-numeric:tabular-nums}
+.bar.bot{text-transform:none;letter-spacing:0;font-weight:500}
+.sub{margin:0;font-family:var(--f-accent);font-size:20px;font-weight:400;color:#fff;min-width:0}
+.playbtn{flex:none;border:1.5px solid #F4F5F7;background:none;color:#F4F5F7;border-radius:999px;padding:6px 14px;font:600 13px var(--f-body);cursor:pointer;transition:background .15s ease,color .15s ease}
+.playbtn:hover{background:#F4F5F7;color:var(--ink)}
+.map{position:relative;min-width:0}
+.map::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,rgba(27,27,31,.18))}
+.map svg{width:100%;height:auto;display:block;aspect-ratio:800/420}
+.lm{position:absolute;inset:0;z-index:2;opacity:0;transform:scale(.04);pointer-events:none;transition:transform .8s cubic-bezier(.2,.7,.2,1),opacity .45s ease}
+.lm.show{opacity:1;transform:none;pointer-events:auto;cursor:pointer}
+.lm svg{width:100%;height:100%}
+.land{fill:var(--bg);stroke:var(--ink);stroke-width:calc(1px*var(--k,1));stroke-opacity:.35;stroke-linejoin:round}
+.mlab{font:italic 400 calc(20px*var(--k,1)) var(--f-accent);fill:var(--muted);opacity:.7}
+.seg{fill:none;stroke:var(--ink);stroke-width:calc(2px*var(--k,1));stroke-dasharray:calc(3px*var(--k,1)) calc(7px*var(--k,1));stroke-linecap:round;opacity:.35}
+.seg.done{stroke:var(--accent);opacity:1;stroke-width:calc(3px*var(--k,1));stroke-dasharray:none}
+.trail{fill:none;stroke:var(--accent);stroke-width:calc(3px*var(--k,1));stroke-linecap:round;stroke-linejoin:round}
+.plane path{fill:var(--accent);stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round}
+.pin{cursor:pointer;outline:none}
+.pin .halo{fill:var(--accent);opacity:0;r:calc(16px*var(--k,1));transition:opacity .2s ease}
+.pin .dot{fill:var(--bg);stroke:var(--ink);stroke-width:calc(3px*var(--k,1));r:calc(7px*var(--k,1));transition:fill .2s ease}
+.pin:hover .dot,.pin:focus-visible .dot{r:calc(10px*var(--k,1))}
+.pin:focus-visible .halo{opacity:.25}
+.pin.past .dot{fill:var(--accent);stroke:var(--accent)}
+.pin.on .dot{fill:var(--accent);stroke:var(--ink);r:calc(10px*var(--k,1))}
+.pin.on .halo{opacity:.2}
+.plab{font:600 calc(16px*var(--k,1)) var(--f-display);fill:var(--ink);paint-order:stroke;stroke:var(--bg);stroke-width:calc(5px*var(--k,1));stroke-linejoin:round}
+.stop{border:1.5px solid var(--line);border-radius:22px;padding:24px;display:grid;gap:10px;align-content:start;min-width:0}
+.stop h3{font-family:var(--f-accent);font-weight:400;font-style:italic;font-size:44px;letter-spacing:-.01em;color:var(--accent)}
+.stop ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.stop .row{margin-top:auto;padding-top:8px}
+.stop .btn:disabled{opacity:.35;cursor:default;transform:none;background:var(--bg)}
+.stops{display:flex;flex-wrap:wrap;gap:8px}
+.stopbtn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:6px 14px 6px 6px;font:500 14px var(--f-body);cursor:pointer;transition:background .15s ease}
+.stopbtn span{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--sky);font-size:12px;font-weight:600}
+.stopbtn:hover{background:var(--sky)}
+.stopbtn[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.stopbtn[aria-selected="true"] span{background:var(--accent);color:#fff}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="#work">Ari Huang<span>.</span></a>
+  <div class="links">
+    <a class="navlink" href="#work" data-nav="work">Work</a>
+    <a class="navlink" href="#projects" data-nav="projects">Projects</a>
+    <a class="navlink" href="#now" data-nav="now">Now</a>
+    <a class="navlink" href="#interests" data-nav="interests">Interests</a>
+    <a class="navlink" href="#connect" data-nav="connect">Connect</a>
+    <button class="btn resume-btn" type="button">Résumé</button>
+  </div>
+</div></nav>
+
+<main class="wrap" id="app"></main>
+
+<footer class="wrap" id="connect">
+  <span class="label">Connect</span>
+  <h2>Got a growth problem in <span class="hi">media</span>? I’d love to hear it.</h2>
+  <div class="row">
+    <span class="email" id="email">ariana.j.huang@gmail.com</span>
+    <button class="btn solid" id="copy" type="button">Copy email</button>
+    <a class="btn" href="https://www.linkedin.com/in/arianahuang/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <button class="btn resume-btn" type="button">Résumé ↓</button>
+  </div>
+  <p class="note" id="dlnote" hidden></p>
+  <div class="fine"><span>© 2026 Ariana Huang</span><span>Made in New York</span></div>
+</footer>
+
+<script>
+/* ---------- Illustrations (simple shapes, one per project) ---------- */
+const ART = {
+  reinvent:`<svg viewBox="0 0 320 200" aria-hidden="true"><rect width="320" height="200" fill="#DCE6FF"/>
+    <g transform="rotate(-8 160 100)"><rect x="70" y="58" width="180" height="84" rx="12" fill="#fff" stroke="#1B1B1F" stroke-width="3"/>
+    <line x1="196" y1="62" x2="196" y2="138" stroke="#1B1B1F" stroke-width="3" stroke-dasharray="6 6"/>
+    <rect x="86" y="76" width="92" height="12" rx="6" fill="#3A5BFF"/><rect x="86" y="98" width="70" height="8" rx="4" fill="#1B1B1F" opacity=".2"/><rect x="86" y="114" width="56" height="8" rx="4" fill="#1B1B1F" opacity=".2"/>
+    <circle cx="223" cy="100" r="14" fill="#FFF0BF" stroke="#1B1B1F" stroke-width="3"/><path d="M216 100l5 5 9-10" fill="none" stroke="#1B1B1F" stroke-width="3" stroke-linecap="round"/></g></svg>`,
+  channels:`<svg viewBox="0 0 320 200" aria-hidden="true"><rect width="320" height="200" fill="#FFE1EC"/>
+    <g fill="#fff" stroke="#1B1B1F" stroke-width="3"><rect x="58" y="70" width="120" height="78" rx="10" transform="rotate(-10 118 109)"/><rect x="102" y="58" width="120" height="78" rx="10"/><rect x="146" y="74" width="120" height="78" rx="10" transform="rotate(8 206 113)"/></g>
+    <path d="M150 78l56 40 56-40" fill="none" stroke="#1B1B1F" stroke-width="3" transform="rotate(8 206 113)"/>
+    <g font-family="Geist,system-ui" font-weight="700" font-size="18" fill="#3A5BFF"><text x="114" y="90">Hallo</text><text x="118" y="116">Bonjour</text></g></svg>`,
+  boostability:`<svg viewBox="0 0 320 200" aria-hidden="true"><rect width="320" height="200" fill="#FFF0BF"/>
+    <rect x="70" y="40" width="180" height="120" rx="14" fill="#fff" stroke="#1B1B1F" stroke-width="3"/>
+    <circle cx="96" cy="66" r="12" fill="#3A5BFF"/><rect x="116" y="58" width="80" height="8" rx="4" fill="#1B1B1F" opacity=".25"/><rect x="116" y="70" width="50" height="6" rx="3" fill="#1B1B1F" opacity=".15"/>
+    <rect x="86" y="90" width="148" height="8" rx="4" fill="#1B1B1F" opacity=".15"/><rect x="86" y="104" width="120" height="8" rx="4" fill="#1B1B1F" opacity=".15"/>
+    <g transform="translate(220 130)"><circle r="30" fill="#3A5BFF" stroke="#1B1B1F" stroke-width="3"/><text x="0" y="9" text-anchor="middle" font-family="Geist,system-ui" font-weight="700" font-size="26" fill="#fff">4×</text></g></svg>`,
+  insights:`<svg viewBox="0 0 320 200" aria-hidden="true"><rect width="320" height="200" fill="#D6F4E4"/>
+    <rect x="100" y="36" width="120" height="132" rx="8" fill="#fff" stroke="#1B1B1F" stroke-width="3" transform="rotate(-6 160 102)"/>
+    <rect x="112" y="34" width="120" height="132" rx="8" fill="#fff" stroke="#1B1B1F" stroke-width="3"/>
+    <rect x="126" y="50" width="92" height="40" rx="6" fill="#3A5BFF"/>
+    <g fill="#1B1B1F" opacity=".2"><rect x="126" y="102" width="92" height="8" rx="4"/><rect x="126" y="116" width="80" height="8" rx="4"/><rect x="126" y="130" width="88" height="8" rx="4"/><rect x="126" y="144" width="60" height="8" rx="4"/></g></svg>`,
+  sales:`<svg viewBox="0 0 320 200" aria-hidden="true"><rect width="320" height="200" fill="#ECE3FF"/>
+    <line x1="70" y1="160" x2="254" y2="160" stroke="#1B1B1F" stroke-width="3" stroke-linecap="round"/>
+    <g stroke="#1B1B1F" stroke-width="3"><rect x="84" y="120" width="30" height="40" rx="6" fill="#fff"/><rect x="130" y="96" width="30" height="64" rx="6" fill="#fff"/><rect x="176" y="68" width="30" height="92" rx="6" fill="#3A5BFF"/></g>
+    <path d="M86 108l46-26 46-30 52-14" fill="none" stroke="#1B1B1F" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 8"/>
+    <path d="M222 30l12 8-14 6" fill="none" stroke="#1B1B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  sleeppillow:`<svg viewBox="0 0 320 200" aria-hidden="true"><rect width="320" height="200" fill="#FFE5D3"/>
+    <path d="M78 104c0-30 20-38 82-38s82 8 82 38-20 40-82 40-82-10-82-40z" fill="#fff" stroke="#1B1B1F" stroke-width="3"/>
+    <path d="M112 96q48 18 96 0" fill="none" stroke="#1B1B1F" stroke-width="3" opacity=".25"/>
+    <path d="M236 44a20 20 0 1 0 22 26 16 16 0 1 1-22-26z" fill="#3A5BFF" stroke="#1B1B1F" stroke-width="3"/>
+    <g font-family="Geist,system-ui" font-weight="700" fill="#1B1B1F"><text x="96" y="56" font-size="18">z</text><text x="112" y="42" font-size="24">z</text></g></svg>`
+};
+ART.habitat=`<svg viewBox="0 0 320 200" aria-hidden="true"><rect width="320" height="200" fill="#D6F4E4"/>
+  <path d="M100 100l60-46 60 46v58H100z" fill="#fff" stroke="#1B1B1F" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="144" y="114" width="32" height="44" rx="4" fill="#3A5BFF" stroke="#1B1B1F" stroke-width="3"/>
+  <rect x="116" y="104" width="20" height="20" rx="3" fill="#FFF0BF" stroke="#1B1B1F" stroke-width="3"/><rect x="184" y="104" width="20" height="20" rx="3" fill="#FFF0BF" stroke="#1B1B1F" stroke-width="3"/>
+  <path d="M232 70c-8-10-24 0-12 12l12 12 12-12c12-12-4-22-12-12z" fill="#FFE1EC" stroke="#1B1B1F" stroke-width="3"/>
+  <line x1="70" y1="158" x2="250" y2="158" stroke="#1B1B1F" stroke-width="3" stroke-linecap="round"/></svg>`;
+const STICKER = `<svg class="sticker" viewBox="0 0 300 300" role="img" aria-label="Ari’s monogram sticker">
+  <circle cx="150" cy="150" r="140" fill="#DCE6FF" stroke="#1B1B1F" stroke-width="4"/>
+  <circle cx="150" cy="150" r="104" fill="#fff" stroke="#1B1B1F" stroke-width="4"/>
+  <text x="150" y="176" text-anchor="middle" font-family="Geist,system-ui" font-weight="700" font-size="84" fill="#1B1B1F">AH</text>
+  <path id="arc" d="M150 150 m-122 0 a122 122 0 1 1 244 0 a122 122 0 1 1 -244 0" fill="none"/>
+  <text font-family="Geist,system-ui" font-weight="600" font-size="15" letter-spacing="4" fill="#3A5BFF"><textPath href="#arc">ATTENTION IN · ACTION OUT · ATTENTION IN · ACTION OUT ·</textPath></text>
+  <circle cx="236" cy="70" r="18" fill="#FFF0BF" stroke="#1B1B1F" stroke-width="4"/></svg>`;
+
+/* ---------- Content ---------- */
+const CASES = [
+  {id:"reinvent", kind:"work", tint:"sky", name:"AWS Executive Marketing", hook:"Getting 5,000 busy executives to actually show up.",
+   stat:"$10B+ pipeline", role:"Digital Marketing Manager", when:"2023–2025", where:"AWS · New York",
+   tags:["Enterprise B2B","Event marketing","ABM","Sports marketing"],
+   setup:"Executives have very full calendars, and re:Invent is AWS’s biggest event of the year. My job was to move the right leaders from “invited” to “in the room,” while running digital campaigns for executive and pan-Amazon engagements, account-based marketing and sports marketing.",
+   did:["Built the re:Invent demand generation strategy in Marketo, aimed at 5,000+ executives","Shaped audience targeting and personalized engagement for executive events and briefings","Tuned live campaigns in Salesforce and AI-enabled analytics tools on deliverability, open rate, CTR and unsubscribes","Ran social for the AWS Executive Insights LinkedIn page","Scoped and piloted new event-tech vendors to cut manual work and get real-time feedback"],
+   results:[["$10B+","marketing pipeline revenue contributed"],["+10%","re:Invent invite-to-attended conversion"],["5,000+","executives targeted"]]},
+  {id:"channels", kind:"work", tint:"pink", name:"AWS Channel Marketing", hook:"One launch, many languages, zero lost in translation.",
+   stat:"15,000+ interactions", role:"Channels Marketing Manager", when:"2025–2026", where:"AWS Integrated Demand Center · New York",
+   tags:["Lifecycle","Localization","Product launches","Startups"],
+   setup:"AWS launches don’t happen in one language or one channel. I led localization for multi-language launches across EMEA, and ran the email program that helped startups, from pre-Series A to scaled, sign up for AWS Activate credits.",
+   did:["Led localization for multi-language launches, using email and A/B tests to sharpen messaging","Lined up launch and activation campaigns across email, organic social, paid media and paid search for developer tools and European Sovereign Cloud","Directed lifecycle email for startups: launches, nurture streams and newsletters","Built B2B targeting and messaging with product marketing, creative, sales and analytics"],
+   results:[["15,000+","unique customer interactions"],["EMEA","multi-language, multi-product launches"]]},
+  {id:"boostability", kind:"work", tint:"sun", name:"Boostability", hook:"Growing a startup with an ad budget of exactly $0.",
+   stat:"4× engagement", role:"Growth Marketing Intern", when:"Sept 2026–now", where:"Remote · EdTech",
+   tags:["Organic growth","Events","Go-to-market","EdTech / AI"],
+   setup:"Boostability is a bootstrapped student assignment management platform. No paid budget means every post and every event has to earn its own attention. I lead organic LinkedIn and brand messaging, run event outreach, and wrote the go-to-market plan from a blank page.",
+   did:["Set the organic LinkedIn strategy and brand voice","Ran outreach for workshops and events through targeted messaging, email and partnerships","Built marketing and sales plans from scratch: target audiences, outreach channels and performance tracking"],
+   results:[["4×","average post engagement"],["75","event registrations"],["47%","attendance rate"]]},
+  {id:"insights", kind:"work", tint:"mint", name:"Executive Insights Content", hook:"Keeping the content calendar full, and worth reading.",
+   stat:"+40% engagement", role:"Digital Marketing Specialist", when:"2022–2023", where:"AWS · Seattle",
+   tags:["Content strategy","Copywriting","Organic + paid social"],
+   setup:"Executive content only works if it ships on time and sounds like the brand. I owned the editorial calendar and the daily social voice for AWS’s executive marketing team.",
+   did:["Managed the editorial calendar and rallied cross-functional teams to launch 3–5 high-impact pieces a quarter","Wrote daily social copy and reviewed agency creative for brand voice","Designed surveys for customers and sales teams that raised response rates and standardized metrics"],
+   results:[["+40%","engagement"],["3–5","flagship pieces per quarter"]]},
+  {id:"sales", kind:"work", tint:"lilac", name:"AWS Demand Gen Sales", hook:"Where I learned exactly what a lead is worth.",
+   stat:"$615K ARR", role:"Associate Account Executive", when:"2021–2022", where:"AWS · Seattle",
+   tags:["Sales","Startups to enterprise","Partnerships"],
+   setup:"Before I marketed to customers, I sold to them. I matched startups, SMBs and enterprises with the right technical experts, partners and account teams, which is why I still think about marketing in pipeline.",
+   did:["Uncovered customers’ goals, decision makers and blockers, then routed them to the right resources","Built playbooks and pitch decks for the Demand Gen team","Secured 10+ co-sell opportunities through negotiation and partnership"],
+   results:[["$615K","ARR in Q4 2021"],["140%","of lead generation target"],["10+","co-sell opportunities"]]},
+  {id:"sleeppillow", kind:"project", tint:"peach", name:"SleepPillow", hook:"What if your pillow helped you put the phone down?",
+   stat:"Product Studio", role:"Product Studio team member", when:"2026", where:"Cornell Tech Product Studio",
+   tags:["Product Studio","Consumer","Wellness","Market research"],
+   setup:"SleepPillow is my team’s project in Cornell Tech’s Product Studio. The sleep market is crowded with mattresses, wearables and apps, so we went looking for the moment none of them own, and landed on the hand-off from screen to sleep.",
+   did:["Researched the sleep industry’s players, profits, processes and pain points","Pinned down an unmet moment: the scroll right before bed","Shaped the concept into SleepPillow, a non-wearable smart pillow, and a pitch deck"],
+   results:[]},
+  {id:"habitat", kind:"project", tint:"mint", name:"#HabitatChallenge", hook:"A student fundraiser for a very real housing problem.",
+   stat:"Co-founder", role:"Co-founder & Marketing Lead", when:"Mar–Sept 2019", where:"Bloomington, Indiana",
+   tags:["Nonprofit","Fundraising","Web & content"],
+   setup:"Housing costs in Monroe County and Bloomington were climbing faster than wages, and affordable homes were scarce. A few of us started #HabitatChallenge to raise money and awareness for Habitat for Humanity of Monroe County.",
+   did:["Led marketing and the website: what content each audience saw, where, and how, for students, donors and sponsors","Ran weekly board meetings on fundraising goals, milestones, issues and next steps","Managed a $1,500 budget across the website, marketing content, club events and swag"],
+   results:[["$1,500","budget managed"],["3","audiences served: students, donors, sponsors"]]}
+];
+
+/* ---------- Views ---------- */
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const card=c=>`<a class="card t-${c.tint}" href="#case-${c.id}">
+  <div class="cover">${ART[c.id]}</div>
+  <div class="meta"><span class="label">${esc(c.name)}</span><h3>${esc(c.hook)}</h3>
+  <div class="stat"><span>${esc(c.stat)}</span><span class="go">Read →</span></div></div></a>`;
+const WORK=CASES.filter(c=>c.kind==="work"), PROJ=CASES.filter(c=>c.kind==="project");
+function workView(){
+  return `<div class="view">
+  <header class="intro">
+    <span class="eyebrow"><i></i>Open to work · Product marketing &amp; growth</span>
+    <h1>A marketer who gets people to <span class="hi">click.</span></h1>
+    <p class="lede">Hi, I’m Ari. <b>5 years at AWS</b> across sales, events, lifecycle and channel marketing, now a <b>Tech MBA at Cornell</b>.</p>
+    <span class="eyebrow plain">Marketed across</span>
+    <div class="chips center">${["Email","LinkedIn","Paid social","Paid search","Events","ABM"].map(c=>`<span class="chip">${c}</span>`).join("")}</div>
+    <div class="tv" role="group" aria-label="Ari in a minute">
+      <button class="screen" id="tvscreen" type="button" aria-label="Change channel">
+        <span class="tvch" id="tvch">AH · 60</span>
+        <span class="tvbody" id="tvbody" aria-live="polite"><span class="play" aria-hidden="true"></span><span class="tvtitle">Ari in a minute</span></span>
+      </button>
+      <div class="side"><span class="brand">AH·60</span><span class="grille" aria-hidden="true"></span>
+        <button class="knob" id="tvknob" type="button" aria-label="Next channel"></button><span class="knob sm" aria-hidden="true"></span></div>
+    </div>
+    <span class="caption">Turn the dial for a quick hello →</span>
+    <div class="row center"><button class="btn solid resume-btn" type="button">Download résumé</button><a class="btn" href="#connect">Connect</a></div>
+  </header>
+  <div class="hl" aria-label="Career highlights">
+    <div class="t-sky"><span class="n">$10B+</span><span class="l">marketing pipeline contributed</span></div>
+    <div class="t-pink"><span class="n">+10%</span><span class="l">re:Invent invite-to-attended</span></div>
+    <div class="t-lilac"><span class="n">$615K</span><span class="l">ARR closed in one quarter</span></div>
+    <div class="t-sun"><span class="n">4×</span><span class="l">startup post engagement</span></div>
+  </div>
+  <section class="sh" aria-labelledby="g-h">
+    <span class="label">Work experience</span>
+    <h2 id="g-h">Where I’ve put in <span class="hi">the reps</span>.</h2>
+  </section>
+  <div class="gallery">${WORK.map(card).join("")}</div>
+  <section class="journey" aria-labelledby="p-h">
+    <div class="sh"><span class="label">The path so far</span><h2 id="p-h">Boston to New York, <span class="hi">the scenic route</span>.</h2>
+      <p class="note">Press play for the full trip, or tap any stop to jump there.</p></div>
+    <div class="jgrid">
+      <div class="cinema">
+        <div class="bar top"><span class="t">Boston → New York <i>the scenic route</i></span><span id="reel">Scene 1 / 6</span></div>
+        <div class="map t-sky">${mapSVG()}<div class="lm" id="lm" aria-hidden="true"></div></div>
+        <div class="bar bot"><p class="sub" id="sub">Boston · Hometown</p><button class="playbtn" id="playtrip" type="button">▶ Play the trip</button></div>
+      </div>
+      <div class="stop" id="stop" aria-live="polite"></div>
+    </div>
+    <div class="stops" role="tablist" aria-label="Stops">${PATH.map((p,i)=>`<button class="stopbtn" type="button" role="tab" data-i="${i}"><span>${i+1}</span>${p.city}</button>`).join("")}</div>
+  </section>
+  <div>
+    <section class="panel t-lilac kit" aria-labelledby="k-h">
+      <h2 id="k-h" style="font-size:26px">Toolkit</h2>
+      <div><span class="label">Marketing &amp; CRM</span><div class="chips"><span class="chip">Salesforce</span><span class="chip">Marketo</span><span class="chip">Sprinklr</span><span class="chip">Qualtrics</span></div></div>
+      <div><span class="label">Data</span><div class="chips"><span class="chip">SQL</span><span class="chip">Tableau</span><span class="chip">Excel</span></div></div>
+      <div><span class="label">Design &amp; ops</span><div class="chips"><span class="chip">Figma</span><span class="chip">Photoshop</span><span class="chip">Illustrator</span><span class="chip">Asana</span><span class="chip">Airtable</span></div></div>
+      <div><span class="label">Certified</span><div class="chips"><span class="chip">AWS Cloud Practitioner</span><span class="chip">AWS Solutions Architect – Associate</span></div></div>
+    </section>
+  </div></div>`;
+}
+function projectsView(){
+  return `<div class="view">
+  <header class="hero"><span class="label">Projects</span>
+    <h1>Side quests, <span class="hi">main lessons</span>.</h1>
+    <p class="lede">Things I’ve built outside a job title, from a student fundraiser to the product my Cornell Tech Product Studio team is developing now.</p></header>
+  <div class="gallery">${PROJ.map(card).join("")}</div></div>`;
+}
+function caseView(id){
+  const c=CASES.find(x=>x.id===id), list=c.kind==="work"?WORK:PROJ, i=list.indexOf(c);
+  const prev=list[(i+list.length-1)%list.length], next=list[(i+1)%list.length];
+  const parent=c.kind==="work"?["work","All work"]:["projects","All projects"];
+  return `<article class="view">
+    <a class="back" href="#${parent[0]}">← ${parent[1]}</a>
+    <header class="case-head">
+      <div style="display:grid;gap:16px"><span class="label">${esc(c.name)}</span><h1>${esc(c.hook)}</h1>
+        <div class="tags">${c.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></div>
+      <div class="cover t-${c.tint}">${ART[c.id]}</div>
+    </header>
+    <div class="facts"><div><span class="label">Role</span><b>${esc(c.role)}</b></div><div><span class="label">When</span><b>${esc(c.when)}</b></div><div><span class="label">Where</span><b>${esc(c.where)}</b></div></div>
+    <div class="prose">
+      <section><h2>The setup</h2><p>${esc(c.setup)}</p></section>
+      <section><h2>What I did</h2><ul>${c.did.map(d=>`<li>${esc(d)}</li>`).join("")}</ul></section>
+      ${c.results.length?`<section><h2>How it went</h2><div class="results">${c.results.map(([n,l])=>`<div class="t-${c.tint}"><span class="n">${esc(n)}</span><span class="l">${esc(l)}</span></div>`).join("")}</div></section>`:""}
+    </div>
+    ${list.length>1?`<nav class="pager" aria-label="More">
+      <a href="#case-${prev.id}"><span class="label">← Previous</span><b>${esc(prev.name)}</b></a>
+      <a href="#case-${next.id}"><span class="label">Next →</span><b>${esc(next.name)}</b></a></nav>`:""}
+  </article>`;
+}
+function nowView(){
+  return `<div class="view">
+  <header class="hero"><span class="label">Now · October 2026</span>
+    <h1>What’s on my plate <span class="hi">this month</span>.</h1>
+    <p class="lede">A snapshot, updated monthly. Two things have my attention right now.</p></header>
+  <div class="two">
+    <section class="panel t-sun"><span class="label">Interning · Boostability</span>
+      <h2 style="font-size:26px">Event season at an edtech startup</h2>
+      <p style="margin:0">As Boostability’s growth marketing intern, I’m supporting three October events:</p>
+      <ul class="evlist">
+        <li><b>EdTech Week NYC</b><span>Oct 13–15</span></li>
+        <li><b>Boostability Breakfast</b><span>Oct 14 · bagels, coffee, AI talk</span></li>
+        <li><b>LSA @ Pace</b><span>Oct 22</span></li>
+      </ul>
+      <a class="btn" href="#case-boostability" style="width:fit-content">More on Boostability →</a></section>
+    <section class="panel t-peach"><span class="label">Building · Product Studio</span>
+      <h2 style="font-size:26px">SleepPillow</h2>
+      <p style="margin:0">My Cornell Tech Product Studio team is developing a non-wearable smart pillow for the hand-off from screen to sleep. This month: research and the pitch.</p>
+      <a class="btn" href="#case-sleeppillow" style="width:fit-content">See the project →</a></section>
+  </div></div>`;
+}
+function interestsView(){
+  const interests=[
+    ["sky","Ad-tech","The machinery behind who sees what, and why it works."],
+    ["pink","Media & streaming","Where attention is the whole product."],
+    ["lilac","Sports tech","I got a taste running sports marketing at AWS and want more."],
+    ["sun","EdTech & AI","My current front row seat, thanks to Boostability."]
+  ];
+  const hobbies=[
+    ["mint","Volleyball around NYC","Find me on courts all over the city. I’ll travel for a good pickup game."],
+    ["sky","Traveling","Always planning the next trip, ideally with a new city to wander."],
+    ["lilac","Big TV watcher","Professional interest, personal obsession. Ask me what I’m watching."],
+    ["peach","Finding cafes","On a lifelong hunt for the perfect cafe to work, read or people-watch in."]
+  ];
+  return `<div class="view">
+  <header class="about-head">
+    <div style="display:grid;gap:18px">
+      <span class="label">Hobbies &amp; interests</span>
+      <h1>Professionally curious about <span class="hi">why people click</span>.</h1>
+      <p class="lede">I’ve built my career around one question: what makes people pay attention, and what makes them act? Here’s where that curiosity goes when it’s off the clock, and where I hope to point it next.</p>
+    </div>
+    ${STICKER}
+  </header>
+  <section class="sh" aria-labelledby="i-h"><span class="label">Interests</span><h2 id="i-h">Industries I can’t stop reading about</h2></section>
+  <div class="nowgrid four">${interests.map(([t,h,p])=>`<section class="panel t-${t}"><h3 style="font-size:22px">${h}</h3><p style="margin:0">${p}</p></section>`).join("")}</div>
+  <section class="sh" aria-labelledby="h-h"><span class="label">Hobbies</span><h2 id="h-h">Off the clock</h2></section>
+  <div class="nowgrid four">${hobbies.map(([t,h,p])=>`<section class="panel t-${t}"><h3 style="font-size:22px">${h}</h3><p style="margin:0">${p}</p></section>`).join("")}</div>
+  </div>`;
+}
+
+/* ---------- Path map ---------- */
+const PATH=[
+  {city:"Boston",when:"Hometown",x:316.5,y:215.2,dx:12,dy:-8,anchor:"start",
+   title:"Where it all started",items:["Where I grew up, and where the story starts."]},
+  {city:"Bloomington",when:"Class of 2021",x:241.4,y:233.3,dx:-12,dy:16,anchor:"end",
+   title:"Indiana University, Kelley School of Business",items:["BS in Business: Marketing and Business Analytics","Co-founded #HabitatChallenge, a student fundraiser for Habitat for Humanity of Monroe County"]},
+  {city:"Chicago",when:"2019",x:241.2,y:217.9,dx:-12,dy:-8,anchor:"end",
+   title:"Marketing intern, SAP",items:["Organized 150+ content assets into one shared platform","Helped plan SAP Fieldglass’s biggest tradeshow"]},
+  {city:"Berlin",when:"Study abroad",x:692.6,y:158.7,dx:0,dy:-16,anchor:"middle",
+   title:"WHU – Otto Beisheim School of Management",items:["Study abroad semester in business administration and management"]},
+  {city:"Seattle",when:"2021–2023",x:100.9,y:185.7,dx:0,dy:-16,anchor:"middle",
+   title:"First job out of college: AWS",items:["Associate Account Executive: $615K ARR in Q4 2021, 140% of lead target","Digital Marketing Specialist: +40% engagement on executive content"]},
+  {city:"New York",when:"2023–now",x:300.8,y:224.5,dx:12,dy:16,anchor:"start",
+   title:"AWS, then Cornell Tech",items:["Digital Marketing Manager: $10B+ pipeline, +10% re:Invent conversion","Channels Marketing Manager: EMEA launches and startup lifecycle","Now: Tech MBA at Cornell Tech and growth at Boostability"]}
+];
+const LAND="M337,400L333,400L332,400L334,398L334,396L337,395L338,395ZM318,353L316,355L313,355L310,355L310,352L311,352L315,352L317,352ZM263,355L261,356L259,355L256,353L257,352L259,352L260,352L263,352L266,354L266,355ZM285,344L289,345L290,344L294,344L296,345L298,345L298,347L301,347L301,349L303,349L305,351L303,353L301,352L298,352L297,352L296,353L294,353L293,352L292,353L289,357L288,356L288,354L285,353L283,354L280,353L277,354L275,353L276,351L280,352L284,352L285,351L284,348L284,346L281,345L282,344ZM253,327L255,329L259,329L261,330L264,334L267,336L269,336L271,337L271,339L274,339L278,341L277,343L274,344L270,344L267,343L260,344L264,341L262,339L259,339L257,337L257,334L254,334L250,333L248,331L242,331L241,329L243,328L238,328L234,331L232,331L231,332L229,333L227,332L230,330L231,328L233,327L236,326L240,325L241,325L245,325L249,325ZM264,322L263,322L262,319L261,317L262,313L264,313L265,318ZM265,305L260,306L260,304L262,304L266,304ZM269,305L268,309L267,309L268,306L266,303L266,303ZM795,253L793,256L793,257L793,257L789,260L786,259L785,257L787,256L788,256L788,255L791,255ZM745,253L748,255L751,255L755,255L755,256L757,255L757,257L750,258L750,257L745,256ZM707,239L705,243L706,245L705,248L702,246L699,245L693,242L693,239L699,240L703,239ZM677,222L680,226L680,233L678,233L676,235L674,233L674,226L673,223L675,223ZM679,216L677,221L675,220L674,216L675,214L678,212ZM356,192L359,192L363,192L360,195L358,195L353,193L353,191L355,189ZM368,177L366,178L360,176L357,173L359,173L364,174L368,176ZM98,181L96,181L90,179L90,177L87,175L87,173L83,172L84,170L85,168L88,169L91,170L94,171L95,173L95,175L98,178ZM395,169L390,173L394,172L396,173L394,175L398,176L400,175L404,177L402,181L405,180L405,183L405,186L402,191L400,191L398,190L400,186L399,185L393,190L390,190L394,187L390,186L385,186L377,186L376,184L380,182L378,181L383,177L389,169L393,165L397,164L399,164L398,165ZM78,150L82,150L77,156L77,161L76,161L75,158L75,156L74,154L75,151L76,150ZM607,160L599,163L593,162L597,157L595,151L601,147L604,145L608,144L612,148L610,151L610,155ZM688,142L686,146L682,143L681,141L687,139ZM0,133L1,132L6,130L9,129L11,130L11,131L6,134L6,134L0,136L0,133ZM623,126L619,132L623,131L628,131L627,135L623,140L627,140L631,147L634,148L636,154L638,156L643,157L642,161L640,163L642,165L638,168L632,168L625,170L623,169L620,171L616,171L613,173L611,172L617,166L621,165L614,164L613,162L618,160L615,157L616,153L623,154L623,151L620,147L615,146L614,145L616,143L615,141L612,144L612,138L610,136L612,130L615,126L619,126ZM322,108L319,110L317,110L317,108L317,108L319,107L321,107ZM313,105L306,108L304,108L304,106L308,104L313,104ZM308,90L307,92L310,91L311,93L314,95L318,96L317,98L320,98L322,100L318,101L312,100L311,98L306,101L299,103L299,100L294,101L299,98L301,94L305,90ZM580,86L579,89L583,93L578,97L566,100L563,101L557,100L547,99L551,96L543,94L550,93L550,91L542,90L545,87L551,86L557,90L563,87L567,88L574,86ZM347,83L343,83L343,81L346,78L350,77L352,78L351,81L350,81ZM800,297L800,297L800,296L800,297ZM800,290L799,291L799,295L798,298L797,299L795,297L793,295L789,287L788,287L791,293L794,299L798,308L800,311L800,420L581,420L580,419L578,418L575,416L572,413L571,411L571,406L569,403L567,401L565,400L564,399L564,396L563,395L562,394L559,392L557,391L556,390L556,389L554,388L554,387L553,382L554,380L552,375L550,373L552,372L554,368L556,365L555,362L557,359L557,354L557,348L557,345L557,343L556,340L553,337L554,335L554,332L556,331L558,328L557,326L559,322L562,318L564,317L565,314L565,311L567,307L570,305L573,299L576,297L580,296L584,292L587,291L591,286L590,279L592,274L592,271L595,267L600,265L604,262L607,256L608,253L612,253L614,255L619,255L624,256L626,256L630,253L635,252L638,250L642,248L650,247L658,246L660,247L664,245L669,245L671,246L674,246L679,244L683,244L683,247L686,245L687,246L685,249L685,252L686,253L686,258L683,261L684,264L686,264L687,267L689,268L695,270L697,269L701,270L707,273L709,278L714,279L720,281L726,284L728,283L730,280L729,276L730,273L733,270L736,269L743,271L744,273L746,273L748,274L752,275L754,277L760,277L765,278L769,280L772,281L775,279L777,277L781,277L784,278L786,280L787,279L791,280L794,280L797,279L798,277L797,277L798,274L799,270L799,268L800,268L800,266L800,290ZM800,248L799,248L795,247L793,250L786,251L782,248L777,248L776,250L773,251L768,248L763,248L760,242L756,239L758,234L755,232L759,226L766,226L768,222L776,222L781,219L786,217L794,217L800,220L800,248ZM800,200L798,199L800,198L800,200ZM800,189L800,189L797,191L793,191L790,193L790,197L793,198L797,198L797,200L792,201L786,204L784,203L784,200L779,198L780,197L784,196L782,194L775,193L775,191L771,191L770,195L767,199L767,200L765,201L764,201L763,208L761,210L760,214L762,217L762,219L767,221L766,223L761,223L759,225L755,228L754,225L754,224L751,224L748,223L743,225L746,228L744,229L742,229L739,226L738,227L740,231L742,233L740,234L743,237L746,239L746,242L742,240L743,243L740,244L742,249L739,249L735,247L733,242L732,238L730,236L728,232L727,231L727,230L726,229L724,227L723,224L723,221L724,219L723,218L722,217L721,216L719,215L714,212L711,210L707,209L703,205L704,204L702,202L702,200L699,199L698,201L696,200L696,198L696,197L697,197L694,196L690,198L691,201L690,203L692,205L696,208L699,213L704,217L707,217L709,219L707,220L712,222L715,224L719,227L720,228L719,230L716,227L712,226L710,230L714,232L713,235L712,235L709,240L708,240L707,239L708,236L709,234L707,231L706,228L704,228L702,225L699,224L697,222L694,221L690,219L686,215L683,212L681,206L679,206L675,204L673,205L671,207L669,208L665,211L656,209L650,211L649,215L649,218L645,222L639,223L639,225L636,228L634,233L636,236L634,238L633,242L629,243L626,248L620,248L616,248L613,250L611,252L609,251L607,249L606,246L601,245L600,247L597,246L595,246L596,242L595,238L593,238L592,236L593,232L595,230L595,228L596,224L596,222L595,220L595,218L595,214L594,211L600,207L606,208L612,208L616,209L620,209L627,209L630,206L630,195L626,189L623,186L616,184L616,180L621,179L629,180L627,174L631,176L641,172L643,167L646,166L650,165L652,164L656,156L661,153L665,153L666,152L669,152L670,153L673,151L672,149L671,145L669,142L669,137L670,136L671,134L674,134L676,132L679,131L679,133L678,135L679,137L681,137L680,139L679,139L676,143L677,145L677,147L682,149L682,151L686,150L688,148L693,150L695,152L698,150L704,148L709,146L714,147L714,148L718,148L719,146L724,144L723,140L723,136L724,132L728,131L732,135L735,134L735,130L735,127L734,128L731,126L730,123L735,122L740,121L745,122L749,122L753,119L748,116L741,117L734,119L728,120L725,117L721,115L721,110L719,105L720,102L723,99L732,94L734,93L733,91L727,88L721,90L718,93L719,96L713,100L706,105L704,112L707,116L711,118L708,124L704,126L703,134L702,139L696,139L694,143L690,143L688,138L684,132L681,125L678,122L670,128L665,129L659,126L657,121L656,109L659,105L669,101L677,96L683,89L691,79L697,76L707,70L715,68L721,68L726,64L733,64L739,63L751,67L747,68L751,71L755,69L762,72L772,73L788,79L791,81L793,84L789,87L783,88L765,85L762,85L769,89L772,96L777,98L780,99L780,97L777,94L779,93L790,96L793,95L789,91L797,86L800,86L800,189ZM800,77L799,76L800,76L800,77ZM278,73L275,75L271,73L267,74L264,72L268,70L272,68L275,70L277,70L277,71ZM255,420L255,419L253,416L252,414L251,411L252,410L251,409L250,408L248,406L246,406L244,408L242,410L241,410L241,411L243,414L242,415L241,416L239,416L238,413L237,414L236,413L235,411L233,411L231,410L229,410L229,411L229,410L226,409L225,408L226,407L226,406L224,404L222,403L221,402L221,401L219,400L220,401L219,403L218,401L216,401L215,399L216,398L216,396L215,395L216,394L215,392L213,390L212,388L210,386L208,384L208,383L209,384L209,383L209,381L207,381L207,382L204,382L202,382L200,380L197,380L196,379L194,378L191,378L189,377L186,374L181,368L179,366L175,365L173,365L168,367L166,368L163,366L159,365L155,363L151,362L146,359L143,357L142,355L139,355L134,353L133,350L128,347L126,343L125,341L127,340L127,338L128,337L129,335L128,332L128,330L127,327L123,322L120,317L118,313L115,311L114,310L116,306L113,305L111,302L111,298L109,298L107,295L105,292L106,290L104,286L104,281L105,279L102,277L100,277L98,275L97,278L96,281L96,285L97,287L99,291L99,293L100,293L100,295L101,295L101,299L102,300L103,302L105,305L105,310L106,313L107,315L106,318L108,319L110,321L111,324L111,325L108,327L107,327L107,323L104,320L102,317L99,316L101,312L101,309L99,307L96,304L95,305L95,304L92,302L90,299L90,298L92,299L95,297L96,294L93,290L91,288L90,285L89,281L89,276L88,271L89,268L87,265L85,264L85,263L82,262L81,261L77,260L76,259L77,256L74,250L74,243L74,241L73,239L71,235L73,230L72,227L75,222L77,217L77,213L82,208L88,197L91,190L92,185L92,183L93,181L99,183L98,189L100,187L102,183L103,178L102,178L97,173L95,170L89,168L89,163L92,160L88,157L90,153L88,149L90,146L89,144L86,143L88,138L86,134L88,129L84,128L78,128L74,127L70,121L67,120L61,118L55,119L50,116L47,114L41,115L39,119L36,119L31,120L26,122L20,123L22,120L29,115L35,113L35,112L27,115L21,119L12,122L13,125L5,129L0,130L0,101L0,101L2,101L7,100L8,97L7,96L12,94L10,94L4,96L2,97L0,96L0,96L0,87L0,87L7,86L10,86L7,88L15,88L16,85L13,83L13,80L12,78L8,77L14,74L20,74L28,72L31,70L38,67L42,67L51,65L54,65L63,62L67,63L68,66L70,65L76,65L75,66L79,67L84,66L90,68L96,68L99,69L104,68L109,70L112,70L118,71L121,74L125,74L130,72L136,71L141,71L148,69L156,68L156,70L160,69L163,67L165,67L167,71L175,68L173,72L178,71L181,70L185,70L189,72L196,74L200,74L204,74L207,77L200,79L206,80L217,79L221,79L223,82L229,79L226,77L230,75L235,75L238,75L240,76L242,78L247,78L252,80L258,79L264,80L265,77L269,76L274,77L271,82L276,78L279,78L284,73L282,70L279,68L283,63L289,60L294,60L296,63L297,68L292,70L299,71L299,71L295,76L303,72L305,76L302,79L304,82L310,79L315,75L318,69L324,70L329,70L332,73L331,75L327,78L328,80L326,83L317,86L311,87L308,86L305,88L299,92L297,94L290,98L285,98L280,100L278,104L273,104L266,108L258,114L255,118L251,124L257,125L256,130L256,134L262,133L268,135L272,137L273,140L278,141L281,144L288,144L292,144L290,149L289,155L289,161L294,166L298,164L302,158L303,150L301,147L309,145L315,141L319,137L320,134L320,129L316,125L324,120L324,115L327,107L330,106L336,107L340,108L344,106L347,108L350,111L351,113L357,113L356,118L354,124L358,125L359,128L366,125L372,120L376,117L377,122L380,128L383,135L380,138L384,141L387,144L393,146L396,147L396,152L399,153L400,155L399,161L395,163L391,165L384,167L377,171L370,172L361,171L354,171L350,171L345,175L339,178L330,185L323,190L327,189L337,182L347,177L354,177L357,179L352,183L351,189L352,193L357,196L364,195L370,189L369,193L372,195L365,199L355,202L350,204L344,208L340,208L342,203L351,199L343,199L338,200L339,201L333,204L328,206L323,208L319,211L318,212L318,215L318,218L320,218L320,216L321,218L320,219L317,220L315,220L311,221L309,221L307,222L302,223L309,222L310,223L304,225L301,225L301,224L299,226L301,226L298,230L294,235L294,233L293,233L292,231L292,235L293,236L293,238L291,240L287,244L287,244L289,240L287,238L288,233L286,236L286,240L284,239L286,240L285,246L286,246L286,248L286,254L282,258L276,260L273,263L270,264L267,266L266,268L260,271L257,274L254,278L253,282L253,286L253,290L255,295L254,297L255,304L254,308L254,310L252,313L250,314L248,313L248,311L246,309L245,305L243,300L243,298L245,294L244,291L241,286L240,285L234,288L233,288L232,285L229,283L224,284L220,284L216,284L214,285L214,286L214,289L214,290L213,291L212,290L210,291L206,291L204,288L199,288L196,287L193,287L189,289L184,293L178,295L175,298L173,301L173,305L172,308L173,309L173,309L173,309L170,314L168,319L166,326L165,329L166,332L167,335L167,339L169,344L170,347L172,350L176,351L178,354L183,352L186,352L190,350L193,350L197,347L198,344L199,339L201,337L204,336L209,335L214,335L217,334L218,335L217,338L214,342L212,345L213,346L212,349L210,353L209,352L208,352L208,353L209,353L209,354L207,357L208,357L207,359L207,360L206,363L205,364L204,365L203,367L205,368L205,367L206,368L207,368L208,367L210,367L210,367L211,367L213,367L215,367L217,367L217,366L219,366L220,367L221,366L222,366L225,367L225,367L227,368L228,369L230,370L231,372L230,372L230,374L230,376L229,378L228,380L228,382L228,384L228,386L227,387L226,389L227,391L225,392L226,394L226,395L227,398L229,400L231,403L233,405L233,406L235,406L235,406L236,407L239,407L241,405L244,404L246,402L248,403L248,403L251,404L253,404L255,406L256,408L259,408L263,404L265,403L265,401L266,397L269,394L272,394L273,393L276,393L281,390L283,389L285,386L287,387L288,388L287,390L287,391L284,392L285,395L285,398L283,401L284,405L286,405L288,401L286,399L286,395L292,392L292,390L294,388L295,392L299,392L302,395L302,397L306,397L311,396L314,399L318,400L321,398L321,397L327,396L333,396L329,398L330,400L334,401L338,404L338,408L341,408L343,410L346,412L349,415L349,418L350,418L352,420L255,420ZM225,54L221,56L231,55L234,57L240,55L242,56L241,61L244,59L246,54L250,54L252,54L255,56L254,61L252,64L257,66L262,69L260,71L253,71L254,73L252,75L246,74L240,73L236,73L227,75L216,76L210,76L210,74L206,72L202,73L201,69L204,69L210,68L215,68L221,67L214,66L206,66L201,66L201,65L211,63L205,63L200,61L206,58L210,56L222,53ZM261,53L255,56L252,53L254,52L259,52ZM361,54L361,56L357,55L353,55L349,56L348,56L345,53L347,52L349,51L356,52ZM325,54L325,57L331,53L342,51L345,56L342,59L350,58L355,56L361,58L365,60L365,63L372,61L374,64L382,66L384,68L386,73L378,75L385,78L391,79L394,84L400,84L397,88L388,93L384,91L380,86L375,87L373,90L376,93L380,95L381,96L382,101L379,105L375,104L367,100L370,104L373,107L373,109L363,107L356,104L352,101L354,100L350,97L345,95L344,96L333,97L330,95L335,92L342,92L350,91L350,89L353,87L360,82L360,80L359,78L355,76L348,74L351,73L349,70L346,70L344,68L341,69L334,70L321,69L314,68L308,67L306,65L312,63L306,63L308,58L314,54L319,52L329,51ZM277,51L281,52L288,51L288,53L283,55L287,57L283,61L276,63L272,62L271,61L265,57L266,55L273,56L271,53ZM299,56L293,59L289,59L290,55L292,53L295,51L299,49L307,50L313,51L304,55ZM195,62L183,65L183,62L177,60L180,58L186,55L193,52L192,49L205,48L209,49L217,49L220,51L222,53L216,54L204,57L197,60ZM305,46L302,47L297,47L294,46L297,44L303,43L305,44ZM295,38L296,40L294,42L289,46L283,46L280,45L282,43L276,43L279,40L283,40L289,38L294,38ZM259,40L259,42L263,41L266,41L265,43L261,46L248,46L237,48L232,48L233,47L242,45L226,45L221,45L231,40L235,39L243,40L247,43L253,43L252,39L257,38L260,38ZM309,36L312,38L319,38L321,39L318,41L322,42L323,43L328,43L333,43L339,42L346,42L352,42L354,44L354,46L351,47L345,48L341,48L330,48L323,48L317,48L309,46L310,44L311,42L309,40L302,39L300,38L302,36ZM238,34L234,37L229,39L226,39L217,41L211,42L207,41L217,37L227,34L232,35ZM314,34L312,35L306,34L306,33L313,33L315,34ZM258,34L251,35L247,34L251,32L257,32L261,32ZM720,33L713,35L707,34L709,33L706,31L713,30L715,32ZM264,30L259,31L254,31L254,30L259,29L261,29ZM309,32L303,33L301,32L301,30L303,29L307,29L309,29L311,31ZM296,31L295,33L290,32L286,31L278,31L283,30L280,29L281,27L287,28L295,29ZM697,25L708,28L700,30L699,33L696,34L695,38L691,38L683,35L686,34L681,32L674,29L671,26L680,24L682,25L686,25L687,24L692,24ZM720,22L727,24L723,26L713,27L703,26L702,25L697,25L693,23L703,22L708,23L711,22ZM800,23L798,23L798,23L794,24L790,23L791,22L784,22L790,21L795,21L796,22L797,21L800,21L800,23ZM345,25L348,27L342,28L333,31L327,31L320,31L318,29L319,28L323,27L317,27L315,25L314,23L319,22L322,21L326,20L325,19L333,19L335,21L340,22L345,23ZM418,12L426,13L432,13L437,14L436,15L427,17L419,17L415,18L422,18L413,21L406,22L398,25L391,26L388,26L377,27L382,27L379,28L380,30L376,32L370,33L367,35L361,36L361,37L367,37L366,38L355,40L347,39L336,40L331,39L325,39L326,37L333,36L334,33L337,33L344,34L342,32L337,31L341,29L348,28L350,27L347,25L347,23L356,23L358,24L365,22L358,22L346,22L342,21L341,19L338,18L339,17L344,16L348,16L355,15L362,14L365,14L368,15L372,13L377,13L383,12L393,12L395,13L404,12L411,12ZM550,11L569,14L563,15L550,15L533,16L534,16L546,16L555,17L562,16L564,17L560,20L568,18L585,17L594,17L596,19L582,22L580,23L569,23L577,24L572,27L569,29L568,34L572,37L566,37L561,38L567,41L567,44L563,45L567,49L559,49L563,51L561,53L556,53L551,53L555,56L555,59L548,57L546,58L551,59L555,62L556,66L549,67L546,65L542,62L543,65L538,68L548,68L553,68L542,72L531,76L520,78L516,78L512,80L505,85L496,88L493,89L488,90L482,91L478,94L477,98L474,101L467,105L467,109L464,113L461,118L455,119L450,114L442,114L439,112L438,107L433,100L433,97L434,92L430,88L433,84L431,82L436,77L443,75L445,73L447,69L442,71L440,72L436,72L432,71L433,67L436,65L439,65L446,66L441,63L438,62L435,62L432,61L438,57L436,55L435,52L433,47L429,45L430,43L422,41L415,40L405,40L397,41L394,39L389,37L399,35L406,35L392,34L386,32L387,31L402,29L415,27L418,25L410,24L414,22L427,19L432,19L432,17L441,16L451,16L461,16L464,17L474,15L480,16L485,16L491,18L484,16L486,14L498,12L509,12L514,11L525,11Z";
+function arc(a,b){const mx=(a.x+b.x)/2,my=(a.y+b.y)/2,d=Math.hypot(b.x-a.x,b.y-a.y);return `M${a.x} ${a.y} Q${mx} ${my-Math.min(140,Math.max(28,d*.35))} ${b.x} ${b.y}`}
+function mapSVG(){
+  const segs=PATH.slice(1).map((p,i)=>arc(PATH[i],p));
+  return `<svg id="mapsvg" viewBox="0 0 800 420" role="img" aria-label="World map of Ari’s path from Boston to New York" style="--k:1">
+  <path d="${LAND}" class="land"/>
+  <text x="470" y="300" class="mlab" text-anchor="middle">Atlantic Ocean</text>
+  ${segs.map((d,i)=>`<path d="${d}" class="seg" data-s="${i}"/>`).join("")}
+  <polyline class="trail" id="trail" points=""/>
+  ${PATH.map((p,i)=>`<g class="pin" data-i="${i}" tabindex="0" role="button" aria-label="${p.city}, ${p.when}">
+    <circle cx="${p.x}" cy="${p.y}" class="halo"/><circle cx="${p.x}" cy="${p.y}" class="dot"/>
+    <text x="${p.x}" y="${p.y}" class="plab" data-dx="${p.dx}" data-dy="${p.dy}" text-anchor="${p.anchor||"start"}">${p.city}</text></g>`).join("")}
+  <g class="plane" id="plane" visibility="hidden"><path d="M12 0L-3 -3L-8 -11L-11 -11L-7 -3L-12 -2L-14 -6L-16 -6L-15 0L-16 6L-14 6L-12 2L-7 3L-11 11L-8 11L-3 3Z"/></g>
+  </svg>`;
+}
+function bindPath(){
+  const box=document.getElementById("stop"), svg=document.getElementById("mapsvg"); if(!box||!svg) return;
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const W=800,H=420,segs=[...svg.querySelectorAll(".seg")],plane=document.getElementById("plane"),trail=document.getElementById("trail");
+  const playBtn=document.getElementById("playtrip");
+  let vb=[0,0,W,H],cur=0,token=0,playing=false;
+  const setVB=v=>{vb=v;svg.setAttribute("viewBox",v.map(n=>n.toFixed(1)).join(" "));const k=v[2]/W;svg.style.setProperty("--k",k);
+    svg.querySelectorAll(".plab").forEach(t=>{const g=PATH[+t.parentNode.dataset.i];t.setAttribute("x",g.x+g.dx*k);t.setAttribute("y",g.y+g.dy*k)})};
+  const fit=(pts,minW)=>{const xs=pts.map(p=>p.x),ys=pts.map(p=>p.y),pad=70;
+    let w=Math.max(minW,Math.max(...xs)-Math.min(...xs)+pad*2,(Math.max(...ys)-Math.min(...ys)+pad*2)*W/H);w=Math.min(w,W);const h=w*H/W;
+    let x=(Math.max(...xs)+Math.min(...xs))/2-w/2,y=(Math.max(...ys)+Math.min(...ys))/2-h/2;
+    x=Math.max(0,Math.min(W-w,x));y=Math.max(0,Math.min(H-h,y));return [x,y,w,h]};
+  const stopView=i=>fit([PATH[i]],280);
+  const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+  const anim=(dur,step,tok)=>new Promise(res=>{const t0=performance.now();const f=now=>{if(tok!==token)return res(false);const t=Math.min(1,(now-t0)/dur);step(ease(t));t<1?requestAnimationFrame(f):res(true)};requestAnimationFrame(f)});
+  const camera=(to,dur,tok)=>{const from=vb.slice();return anim(dur,e=>setVB(from.map((v,i)=>v+(to[i]-v)*e)),tok)};
+  const fly=(i,tok)=>{const seg=segs[i],len=seg.getTotalLength(),pts=[];plane.setAttribute("visibility","visible");
+    return anim(1500,e=>{const l=e*len,p=seg.getPointAtLength(l),q=seg.getPointAtLength(Math.min(len,l+1)),r=seg.getPointAtLength(Math.max(0,l-1));
+      const a=Math.atan2(q.y-r.y,q.x-r.x)*180/Math.PI;plane.setAttribute("transform",`translate(${p.x} ${p.y}) rotate(${a}) scale(${vb[2]/W})`);
+      pts.push(`${p.x.toFixed(1)},${p.y.toFixed(1)}`);trail.setAttribute("points",pts.join(" "))},tok).then(ok=>{plane.setAttribute("visibility","hidden");trail.setAttribute("points","");return ok})};
+  const card=i=>{const p=PATH[i];
+    box.innerHTML=`<span class="label">Stop ${i+1} of ${PATH.length} · ${p.when}</span><h3>${p.city}</h3><b>${p.title}</b>
+      <ul>${p.items.map(t=>`<li>${t}</li>`).join("")}</ul>
+      <div class="row"><button class="btn" type="button" data-go="${i-1}" ${i===0?"disabled":""}>← Back</button><button class="btn solid" type="button" data-go="${i+1}" ${i===PATH.length-1?"disabled":""}>Next stop →</button></div>`;
+    box.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>{stop();go(+b.dataset.go)}));
+    document.querySelectorAll(".stopbtn").forEach(b=>b.setAttribute("aria-selected",+b.dataset.i===i))};
+  const scene=i=>{const p=PATH[i];
+    document.getElementById("sub").textContent=`${p.city} · ${p.when}`;document.getElementById("reel").textContent=`Scene ${i+1} / ${PATH.length}`;
+    svg.querySelectorAll(".pin").forEach(g=>{g.classList.toggle("on",+g.dataset.i===i);g.classList.toggle("past",+g.dataset.i<i)});
+    segs.forEach((sg,k)=>sg.classList.toggle("done",k<i))};
+  async function go(j){
+    const tok=++token,from=cur;cur=j;card(j);hideLm();
+    if(reduce||from===j){setVB(stopView(j));scene(j);return landmark(j,tok,playing?2600:3200)}
+    document.getElementById("sub").textContent=`En route to ${PATH[j].city}…`;
+    segs.forEach((sg,k)=>sg.classList.toggle("done",k<Math.min(from,j)));
+    if(!await camera(fit([PATH[from],PATH[j]],320),800,tok))return false;
+    if(j===from+1){if(!await fly(from,tok))return false}
+    segs.forEach((sg,k)=>sg.classList.toggle("done",k<j));
+    if(!await camera(stopView(j),800,tok))return false;
+    scene(j);await wait(250);if(tok!==token)return false;
+    return landmark(j,tok,playing?2600:3200)}
+  const lm=document.getElementById("lm");
+  const wait=ms=>new Promise(r=>setTimeout(r,ms));
+  const hideLm=()=>lm.classList.remove("show");
+  lm.addEventListener("click",()=>{hideLm()});
+  async function landmark(i,tok,hold){
+    if(reduce){lm.style.transition="none"}
+    const p=PATH[i];lm.innerHTML=LANDMARK[i][1];
+    lm.style.transformOrigin=`${(p.x-vb[0])/vb[2]*100}% ${(p.y-vb[1])/vb[3]*100}%`;
+    lm.getBoundingClientRect();lm.classList.add("show");
+    document.getElementById("sub").textContent=`${p.city} · ${LANDMARK[i][0]}`;
+    await wait(hold); if(tok!==token) return false;
+    hideLm(); await wait(reduce?0:650); if(tok!==token) return false;
+    document.getElementById("sub").textContent=`${p.city} · ${p.when}`; return true}
+  const stop=()=>{playing=false;playBtn.textContent="▶ Play the trip"};
+  async function play(){
+    playing=true;playBtn.textContent="❚❚ Pause";const tok=++token;
+    if(cur===PATH.length-1||vb[2]===W){cur=0;card(0);scene(0);hideLm();if(!reduce&&!await camera(stopView(0),900,tok))return;
+      if(!await landmark(0,tok,2600))return}
+    await wait(500);
+    while(playing&&cur<PATH.length-1){if(!await go(cur+1))return;await wait(500)}
+    if(playing){const t=++token;if(!reduce)await camera([0,0,W,H],1200,t);stop()}}
+  playBtn.addEventListener("click",()=>playing?(stop(),token++):play());
+  svg.querySelectorAll(".pin").forEach(g=>{const f=()=>{stop();go(+g.dataset.i)};g.addEventListener("click",f);g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();f()}})});
+  document.querySelectorAll(".stopbtn").forEach(b=>b.addEventListener("click",()=>{stop();go(+b.dataset.i)}));
+  setVB([0,0,W,H]);card(0);scene(0);
+  let auto=true; const cine=document.querySelector(".cinema");
+  [playBtn,...document.querySelectorAll(".stopbtn,.pin")].forEach(el=>el.addEventListener("click",()=>{auto=false},{capture:true}));
+  if("IntersectionObserver" in window){const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&auto){auto=false;io.disconnect();play()}})},{threshold:.6});io.observe(cine)}
+}
+
+/* ---------- Landmark close-ups ---------- */
+const INK="#1B1B1F",ACC="#3A5BFF",STONE="#F3EBDD";
+const lmFrame=(bg,body,city,tag)=>`<svg viewBox="0 0 800 420" aria-hidden="true"><rect width="800" height="420" fill="${bg}"/>${body}
+  <text x="40" y="58" font-family="Geist,system-ui" font-weight="600" font-size="15" letter-spacing="3" fill="${INK}" opacity=".7">${tag.toUpperCase()}</text>
+  <text x="38" y="118" font-family="Instrument Serif,Georgia,serif" font-style="italic" font-size="64" fill="${ACC}" paint-order="stroke" stroke="${bg}" stroke-width="8">${city}</text></svg>`;
+const S=`stroke="${INK}" stroke-width="3" stroke-linejoin="round"`;
+const LANDMARK=[
+ ["the Seaport waterfront", lmFrame("#FFE5D3",`
+  <defs><pattern id="win" width="14" height="16" patternUnits="userSpaceOnUse"><rect width="14" height="16" fill="#fff"/><rect x="0" y="12" width="14" height="2" fill="${ACC}" opacity=".25"/></pattern></defs>
+  <circle cx="660" cy="110" r="46" fill="#FFF0BF"/>
+  ${[[330,150,70],[410,110,60],[480,170,80],[570,135,55],[635,190,90]].map(([x,y,w])=>`<rect x="${x}" y="${y}" width="${w}" height="${320-y}" fill="url(#win)" ${S}/>`).join("")}
+  <rect x="0" y="316" width="800" height="104" fill="#DCE6FF"/><line x1="0" y1="318" x2="800" y2="318" stroke="${INK}" stroke-width="4"/>
+  ${[350,375,400].map((y,i)=>`<path d="M${40+i*90} ${y}q20 -8 40 0t40 0" fill="none" stroke="${INK}" stroke-width="2" opacity=".35"/>`).join("")}
+  <rect x="60" y="300" width="250" height="14" fill="#fff" ${S}/>${[100,180,260].map(x=>`<line x1="${x}" y1="300" x2="${x}" y2="250" stroke="${INK}" stroke-width="4"/><circle cx="${x}" cy="246" r="8" fill="#FFF0BF" ${S}/>`).join("")}
+  <path d="M560 368h120l-18 22h-84z" fill="#fff" ${S}/><path d="M616 366V290l46 76z" fill="${ACC}" ${S}/>`,"Boston","Scene 1 · Hometown")],
+ ["the Sample Gates", lmFrame("#FFF0BF",`
+  <rect x="0" y="320" width="800" height="100" fill="#D6F4E4"/><line x1="0" y1="320" x2="800" y2="320" stroke="${INK}" stroke-width="3"/>
+  ${[[130,260],[60,290],[790,250]].map(([x,y])=>`<line x1="${x}" y1="${y}" x2="${x}" y2="322" stroke="${INK}" stroke-width="5"/><circle cx="${x}" cy="${y}" r="58" fill="#FFB98F" ${S}/>`).join("")}
+  <g transform="translate(110 0)"><path d="M380 320h140l60 100H320z" fill="#fff" ${S}/>
+  ${[300,530].map(x=>`<rect x="${x}" y="160" width="70" height="160" fill="${STONE}" ${S}/><rect x="${x-10}" y="148" width="90" height="16" fill="${STONE}" ${S}/><rect x="${x+22}" y="122" width="26" height="26" fill="#FFF0BF" ${S}/>`).join("")}
+  <path d="M370 210Q450 120 530 210" fill="none" stroke="${INK}" stroke-width="5"/><path d="M370 226Q450 140 530 226" fill="none" stroke="${INK}" stroke-width="3"/>
+  <line x1="450" y1="158" x2="450" y2="176" stroke="${INK}" stroke-width="3"/><rect x="440" y="176" width="20" height="24" rx="4" fill="#FFF0BF" ${S}/></g>`,"Bloomington","Scene 2 · Class of 2021")],
+ ["the Loop and the L", lmFrame("#ECE3FF",`
+  <rect x="0" y="350" width="800" height="70" fill="#DCE6FF"/>
+  ${[[300,190,60],[370,220,50],[650,200,60],[720,240,60]].map(([x,y,w])=>`<rect x="${x}" y="${y}" width="${w}" height="${350-y}" fill="#fff" ${S}/>`).join("")}
+  <rect x="470" y="130" width="70" height="220" fill="${INK}"/><rect x="485" y="92" width="40" height="40" fill="${INK}"/>
+  <line x1="495" y1="92" x2="495" y2="40" stroke="${INK}" stroke-width="4"/><line x1="515" y1="92" x2="515" y2="40" stroke="${INK}" stroke-width="4"/>
+  <path d="M570 350l14-230h44l14 230z" fill="${INK}"/><path d="M584 140l44 80M628 140l-44 80M580 230l52 80M632 230l-52 80" stroke="#fff" stroke-width="2" opacity=".6"/>
+  <rect x="0" y="300" width="800" height="12" fill="${INK}"/>${[40,140,240,340,440,540,640,740].map(x=>`<line x1="${x}" y1="312" x2="${x}" y2="350" stroke="${INK}" stroke-width="4"/>`).join("")}
+  ${[110,212].map(x=>`<rect x="${x}" y="266" width="96" height="34" rx="6" fill="#fff" ${S}/>${[0,1,2,3].map(k=>`<rect x="${x+10+k*21}" y="274" width="14" height="12" fill="${ACC}"/>`).join("")}`).join("")}`,"Chicago","Scene 3 · SAP internship")],
+ ["the Brandenburg Gate", lmFrame("#DCE6FF",`
+  <path d="M600 90q14-22 38-10q18-16 36 4q22-2 22 16h-112q0-12 16-10z" fill="#fff" ${S}/>
+  <rect x="0" y="344" width="800" height="76" fill="${STONE}"/><line x1="0" y1="344" x2="800" y2="344" stroke="${INK}" stroke-width="3"/>
+  <rect x="230" y="330" width="340" height="16" fill="#fff" ${S}/>
+  ${[0,1,2,3,4,5].map(k=>`<rect x="${248+k*58}" y="202" width="22" height="128" fill="#fff" ${S}/>`).join("")}
+  <rect x="230" y="170" width="340" height="34" fill="#fff" ${S}/><rect x="300" y="140" width="200" height="32" fill="#fff" ${S}/>
+  <path d="M360 140v-18l12-8 8 10 8-12 8 10 8-12 8 10 8-12 10 14v18z" fill="${ACC}" ${S}/><line x1="400" y1="104" x2="400" y2="78" stroke="${INK}" stroke-width="3"/><circle cx="400" cy="74" r="5" fill="${ACC}" ${S}/>`,"Berlin","Scene 4 · Study abroad")],
+ ["the Space Needle", lmFrame("#DCE6FF",`
+  <path d="M60 340L240 170L420 340z" fill="#ECE3FF" ${S}/><path d="M204 204L240 170L276 204L258 198L240 214L222 198z" fill="#fff" ${S}/>
+  <rect x="0" y="372" width="800" height="48" fill="#D6F4E4"/><line x1="0" y1="372" x2="800" y2="372" stroke="${INK}" stroke-width="3"/>
+  ${[[450,300],[690,290],[740,310],[400,320]].map(([x,y])=>`<path d="M${x} ${y}l26 74h-52z" fill="#7FCBA0" ${S}/>`).join("")}
+  <path d="M520 372Q548 270 554 196M600 372Q572 270 566 196" fill="none" stroke="${INK}" stroke-width="5"/>
+  <ellipse cx="560" cy="290" rx="20" ry="5" fill="#fff" ${S}/>
+  <path d="M500 190Q560 146 620 190z" fill="${ACC}" ${S}/><ellipse cx="560" cy="192" rx="72" ry="14" fill="#fff" ${S}/>
+  <ellipse cx="560" cy="160" rx="28" ry="7" fill="#fff" ${S}/><line x1="560" y1="154" x2="560" y2="84" stroke="${INK}" stroke-width="4"/>`,"Seattle","Scene 5 · AWS, 2021–2023")],
+ ["the Brooklyn Bridge", lmFrame("#FFE1EC",`
+  ${[[300,210,50],[460,230,40],[620,200,60],[680,240,50]].map(([x,y,w])=>`<rect x="${x}" y="${y}" width="${w}" height="${330-y}" fill="#fff" ${S}/>`).join("")}
+  <rect x="380" y="160" width="60" height="170" fill="#fff" ${S}/><rect x="390" y="130" width="40" height="30" fill="#fff" ${S}/><rect x="400" y="106" width="20" height="24" fill="#fff" ${S}/><line x1="410" y1="106" x2="410" y2="56" stroke="${INK}" stroke-width="4"/>
+  <rect x="0" y="330" width="800" height="90" fill="#DCE6FF"/>
+  <path d="M0 292Q120 262 245 176M245 176Q390 300 555 176M555 176Q680 262 800 292" fill="none" stroke="${INK}" stroke-width="3"/>
+  ${[60,120,300,350,400,450,500,620,680,740].map(x=>`<line x1="${x}" y1="300" x2="${x}" y2="${x<245?292-(x/245)*90:x>555?200+((x-555)/245)*85:260}" stroke="${INK}" stroke-width="1.5" opacity=".5"/>`).join("")}
+  <rect x="0" y="300" width="800" height="12" fill="${INK}"/>
+  ${[220,530].map(x=>`<path d="M${x} 360V170h50v190z" fill="${STONE}" ${S}/><path d="M${x+9} 300V214q7-14 14 0v86zM${x+27} 300V214q7-14 14 0v86z" fill="#FFE1EC" ${S}/>`).join("")}
+  <rect x="340" y="288" width="34" height="12" rx="3" fill="#FFD23F" ${S}/>`,"New York","Scene 6 · 2023–now")]
+];
+
+/* ---------- TV ---------- */
+const TV=[
+  ["CH 1 · The day job","5 years at AWS. Started in sales, then executive, event, lifecycle and channel marketing."],
+  ["CH 2 · The receipts","$10B+ pipeline. +10% re:Invent conversion. $615K ARR in one quarter."],
+  ["CH 3 · Right now","Tech MBA at Cornell Tech, growth intern at Boostability, building SleepPillow in Product Studio."],
+  ["CH 4 · Off air","Volleyball around NYC, hunting for cafes, traveling, and a lot of TV."],
+  ["CH 5 · Coming up next","Product marketing, product, BD and partnerships in ad-tech, media, streaming and sports tech."]
+];
+let tvi=-1;
+function bindTV(){
+  const scr=document.getElementById("tvscreen"); if(!scr) return; tvi=-1;
+  const next=()=>{tvi=(tvi+1)%TV.length;const [ch,t]=TV[tvi];
+    document.getElementById("tvch").textContent=ch;
+    document.getElementById("tvbody").innerHTML=`<span class="tvtext">${t}</span>`;
+    scr.classList.remove("zap");void scr.offsetWidth;scr.classList.add("zap")};
+  scr.addEventListener("click",next); document.getElementById("tvknob").addEventListener("click",next);
+}
+
+/* ---------- Router ---------- */
+const app=document.getElementById("app");
+const VIEWS={work:workView,projects:projectsView,now:nowView,interests:interestsView};
+function route(){
+  const h=(location.hash||"#work").slice(1);
+  let page;
+  if(h==="connect"){ if(!app.innerHTML) {app.innerHTML=workView();bindTV()} setNav("connect"); bindResume(); document.getElementById("connect").scrollIntoView(); return }
+  if(VIEWS[h]){app.innerHTML=VIEWS[h]();page=h}
+  else if(h.startsWith("case-")&&CASES.some(c=>"case-"+c.id===h)){const c=CASES.find(x=>"case-"+x.id===h);app.innerHTML=caseView(c.id);page=c.kind==="work"?"work":"projects"}
+  else {app.innerHTML=workView();page="work"}
+  setNav(page); window.scrollTo(0,0); bindResume(); bindTV(); bindPath();
+}
+function setNav(page){document.querySelectorAll("[data-nav]").forEach(a=>a.toggleAttribute("aria-current",false));const cur=document.querySelector(`[data-nav="${page}"]`);if(cur)cur.setAttribute("aria-current","page")}
+
+/* ---------- Résumé download ---------- */
+let dl=null;(async()=>{try{dl=await window.claude?.use?.("downloads")}catch(_){dl=null}})();
+const note=document.getElementById("dlnote");
+function bindResume(){
+  document.querySelectorAll(".resume-btn:not([data-bound])").forEach(b=>{b.dataset.bound="1";b.addEventListener("click",async()=>{
+    const msg=t=>{note.textContent=t;note.hidden=false;note.scrollIntoView({block:"nearest"})};
+    if(!dl){const a=document.createElement("a");a.href="resume.pdf";a.download="Ariana_Huang_Resume.pdf";document.body.appendChild(a);a.click();a.remove();return}
+    try{const blob=await (await fetch("resume.pdf")).blob();await dl.save({filename:"Ariana_Huang_Resume.pdf",data:blob})}
+    catch(e){if(e&&e.code==="declined")return;if(e&&e.code==="rate_limited"){msg("One sec, then try again.");return}msg("The résumé download isn’t available right now. Grab it from LinkedIn or email me.")}
+  })});
+}
+document.getElementById("copy").addEventListener("click",e=>{
+  const b=e.currentTarget,t=document.getElementById("email").textContent;
+  const sel=()=>{const r=document.createRange();r.selectNodeContents(document.getElementById("email"));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Selected, now copy"};
+  try{navigator.clipboard.writeText(t).then(()=>{b.textContent="Copied!"},sel)}catch(_){sel()}
+  setTimeout(()=>b.textContent="Copy email",2200);
+});
+window.addEventListener("hashchange",route);
+route();
+</script>
+
+</body>
+</html>
