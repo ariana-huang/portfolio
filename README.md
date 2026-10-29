@@ -6,3 +6,4 @@ Static site with no build step. Open `index.html` in a browser, or serve the fol
 
 - `index.html`: the whole site (pages are hash routes: `#work`, `#projects`, `#now`, `#interests`, `#connect`)
 - `resume.pdf`: résumé offered by the download buttons
+# portfolio
